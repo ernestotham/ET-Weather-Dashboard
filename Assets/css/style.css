@@ -1,17 +1,29 @@
-[class*="col"]{
+/* [class*="row"]{
 padding: 1rem;
 background-color: aqua;
 border: 2px solid wheat;
 color: wheat;
 text-align: center;
 
-}
-
-[class*="con"] {
+} */
+/* 
+[class*="col"] {
     padding: 1rem;
     background-color: violet;
     border: 2px solid wheat;
     color: wheat;
     text-align: center;
+
+} */
+
+.dayfc{
+    background-color: rgb(22, 22, 145);
+    color: white;
+    margin: 16px;
+    opacity:80%;
+}
+
+.cityAttrib{
+    font-size: 20px;
 
 }
