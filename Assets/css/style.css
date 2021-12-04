@@ -1,0 +1,17 @@
+[class*="col"]{
+padding: 1rem;
+background-color: aqua;
+border: 2px solid wheat;
+color: wheat;
+text-align: center;
+
+}
+
+[class*="con"] {
+    padding: 1rem;
+    background-color: violet;
+    border: 2px solid wheat;
+    color: wheat;
+    text-align: center;
+
+}
