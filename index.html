@@ -24,14 +24,14 @@
             <div class="col-md-3 d-grid gap-3 btn-light ">
                 
                 <h1 class="display-6 text-start">Search for City:</h1>
-                <form action="">
-                    <div class="form-group d-grid gap-3">
-                        <input class="form-control from-control-lg" type="text" name="city" id="lblcity">
-                        <button class="form-control from-control-lg bg-primary"> Search</button>
+                <!-- <form action=""> -->
+                    <div class="d-grid gap-3">
+                        <input class="CityinputTB" type="text" name="city" id="lblcity">
+                        <button class="bg-primary" id="searchBtn"> Search</button>
                         <br>
                     </div>
                    
-                </form>
+                <!-- </form> -->
 
                 <div class="d-grid gap-3">
                     <button class="btn btn-light p-1 bg-secondary" id="newbtn"  from-control-lg>temptbtn1</button>
@@ -42,25 +42,30 @@
             
             </div>
             <div class="col-md-9 pt-3 pe-4 px-4">
-                <div class="row border border-dark ">
+                <div class="row border border-dark d-none">
                     <div class="col-md-12">
-                        <h1 class="CityLbl">City and date</h1>
-                        <h1 class="cityAttrib">temp text</h1>
-                        <h1 class="cityAttrib">temp text</h1>
-                        <h1 class="cityAttrib">temp text</h1>
-                        <h1 class="cityAttrib">temp text</h1>
+                        <h1 class="CityLbl" id="cityDateIcon">City and date</h1>
+                        <h1 class="cityAttrib" id="temp">temp text</h1>
+                        <h1 class="cityAttrib" id="wind">temp text</h1>
+                        <h1 class="cityAttrib" id="humidity">temp text</h1>
+                        <h1 class="cityAttrib" id="uv">temp text</h1>
 
                     </div>
                     
                 </div>
 
-                <div class="row p-2">
+                <div class="row p-2 d-none">
                     <h1 class="">5-Day Forcast:</h1>
-                    <div class="col col-xm-4 dayfc"><h1 class="disaply-4 text-center">day1 "01n"</h1></div>
-                    <div class="col col-xm-4 dayfc"><h1 class="disaply-4 text-center">day2</h1></div>
-                    <div class="col col-xm-4 dayfc"><h1 class="disaply-4 text-center">day3</h1></div>
-                    <div class="col col-xm-4 dayfc"><h1 class="disaply-4 text-center">day4</h1></div>
-                    <div class="col dayfc"><h1 class="disaply-4 text-center">day5</h1></div>
+                    <div class="col col-xm-4 dayfc" id="Fday1">
+                        <!-- <h1 class="disaply-4 text-center" id="Fday1date"></h1>
+                        <h1 class="disaply-4 text-center" id="Fday1icon"></h1>
+                        <h1 class="disaply-4 text-center" id="Fday1"></h1>
+                        <h1 class="disaply-4 text-center" id="Fday1"></h1> -->
+                    </div>
+                    <div class="col col-xm-4 dayfc" id="Fday2"></div>
+                    <div class="col col-xm-4 dayfc" id="Fday3"></div>
+                    <div class="col col-xm-4 dayfc" id="Fday4"></div>
+                    <div class="col dayfc" id="Fday5"></div>
                     
                 </div>
 
@@ -76,7 +81,8 @@
 
 
     <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script src = "./Assets/js/script.js"></script>
 </body>
 </html>
