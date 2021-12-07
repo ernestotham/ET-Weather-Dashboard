@@ -13,7 +13,7 @@ function getWeather(city){
         redirect: 'follow'
       };
       
-      fetch('http://api.openweathermap.org/data/2.5/weather?q='+city+'&appid='+key+'&units=imperial&lang=en&mode=json', requestOptions)
+      fetch('https://api.openweathermap.org/data/2.5/weather?q='+city+'&appid='+key+'&units=imperial&lang=en&mode=json', requestOptions)
         .then(response => {return response.json()})
         .then(result => {
             cord = result
@@ -39,7 +39,7 @@ function getForcastbyLatitude(lat, lon){
         redirect: 'follow'
       };
       
-     fetch('http://api.openweathermap.org/data/2.5/onecall?lat='+lat+'&lon='+lon+'&appid='+key+'&units=imperial', requestOptions)
+     fetch('https://api.openweathermap.org/data/2.5/onecall?lat='+lat+'&lon='+lon+'&appid='+key+'&units=imperial', requestOptions)
      .then((response) => {
          return response.json()})
      .then((responseData) => {
@@ -75,7 +75,7 @@ console.log(weathercast.daily[forcastCount].wind_speed)
 console.log(weathercast.daily[forcastCount].humidity)
 console.log(weathercast.daily[forcastCount].uvi)
 console.log(weathercast.daily[forcastCount].weather[0].icon)
-console.log('icon url: http://openweathermap.org/img/w/'+weathercast.daily[forcastCount].weather[0].icon+'.png')
+console.log('icon url: https://openweathermap.org/img/w/'+weathercast.daily[forcastCount].weather[0].icon+'.png')
 console.log(forcastCount)
 forcastCount++;
 
@@ -128,7 +128,7 @@ function displayResults() {
 
     }
 
-    var cachedBtn = $('#cachedBtn').append('<button class="btn btn-light p-1 w-100 gap-3 bg-secondary max-height:10px" id="newbtn"  from-control-lg>'+cord.name+'</button>')
+    var cachedBtn = $('#cachedBtn').append('<button class="btn btn-light p-1 my-1 w-100 gap-3 bg-secondary max-height:10px" id="newbtn"  from-control-lg>'+cord.name+'</button>')
 
     for(i=0; i < hiddenEls.length; i++){
         hiddenEls[i].classList.remove('d-none')
@@ -163,18 +163,4 @@ SerchBtnEl.addEventListener('click', function(event) {
     
 })
 
-// $('#searchBtn button').on('click', 'button', function() {
-
-//     console.log(this)
-//     eventBtn = this
-
-    // var buttonid = $( this ).attr('id')
-
-
-// console.log( buttonid );
-// console.log("textarea#".concat(buttonid))
-// console.log( $("textarea#".concat(buttonid)).val())
-// // console.log( $('\'textarea#'+buttonid+'\'' ).val())
-// appendToLocalStorage(buttonid,$("textarea#".concat(buttonid)).val())
-
-// });
+// end
