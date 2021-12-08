@@ -2,8 +2,20 @@ var key = "44671112649d707f9ee751ddd2e40f1f"
 var weathercast;
 var cord;
 var eventBtn
+var hiddenEls = document.querySelectorAll('.d-none')
 
+function cacheBtn(){
 
+    $("button#newbutton").on("click", function(){
+
+        console.log(this.innerText)
+        weathercast = retrieveContent(this.innerText.concat('w').toUpperCase())
+        cord = retrieveContent(this.innerText.concat('c').toUpperCase())
+        load()
+    
+    })
+
+}
 
 
 
@@ -45,6 +57,7 @@ function getForcastbyLatitude(lat, lon){
      .then((responseData) => {
         weathercast = responseData
         displayResults()
+        cacheBtn()
        console.log(responseData);
 
 
@@ -87,10 +100,8 @@ forcastCount++;
 
 
 
-function displayResults() {
-
+function load(){
     
-    var hiddenEls = document.querySelectorAll('.d-none')
     var Fordcastday0 =$('#Fday')
   
 
@@ -120,15 +131,22 @@ function displayResults() {
 
         }
 
-        else{console.log("missing something")}
-
-
-
+        
         
 
     }
+    
+}
 
-    var cachedBtn = $('#cachedBtn').append('<button class="btn btn-light p-1 my-1 w-100 gap-3 bg-secondary max-height:10px" id="newbtn"  from-control-lg>'+cord.name+'</button>')
+function displayResults() {
+
+    load()
+   
+    storeContent(SearchTB.value.concat('w'), SearchTB.value.concat('c'))
+    //'+SearchTB.value.toUpperCase()+'
+    var cachedBtn = $('#cachedBtn').append('<button class="btn btn-light p-1 my-1 w-100 gap-3 bg-secondary max-height:10px from-control-lg" id="newbutton"  >'+cord.name+'</button>')
+
+
 
     for(i=0; i < hiddenEls.length; i++){
         hiddenEls[i].classList.remove('d-none')
@@ -137,6 +155,21 @@ function displayResults() {
 
 
 }
+
+function storeContent(forcastname, corname){
+    console.log(JSON.stringify(weathercast))
+   localStorage.setItem(forcastname.toUpperCase(), JSON.stringify(weathercast))
+   localStorage.setItem(corname.toUpperCase(), JSON.stringify(cord))
+  
+}
+
+function retrieveContent(name){
+
+    return JSON.parse(localStorage.getItem(name.toUpperCase()))
+
+
+}
+
 
 //Event Listeners
 
@@ -156,7 +189,22 @@ SerchBtnEl.addEventListener('click', function(event) {
 
         getWeather(SearchTB.value)
         
+        
+        
     }
+
+   
+
+
+
+// var cachedBtn = document.getElementById("cachedBtn")
+// cachedBtn.addEventListener('click',function(){
+//     console.log(this)
+//     weathercast = retrieveContent(this.id.concat('w').toUpperCase())
+//     cord = retrieveContent(this.innerText.concat('c').toUpperCase())
+//     load()
+
+// })
     
    
  
