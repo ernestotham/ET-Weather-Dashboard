@@ -172,8 +172,10 @@ function search(event) {
 }
 
 //event listener for search button
-SerchBtnEl.addEventListener('click', search())
+SerchBtnEl.addEventListener('click', search)
 //event listener for search textbox
+
+
 SearchTB.addEventListener('keyup', function(event){
     if(event.keyCode === 13){search()}
 })
