@@ -8,6 +8,8 @@ Weather app
 The following image shows the web application's appearance and functionality:
 
 
+
+
 <img src='https://user-images.githubusercontent.com/23125242/146104367-e3dd10eb-6c7e-439f-bce1-ffa883feab2d.jpg'>
 
 
